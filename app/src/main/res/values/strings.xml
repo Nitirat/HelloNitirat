@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Hello_Nitirat</string>
+    <string name="calculate">calculate</string>
+    <string name="i_agree">I Agree</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="multiply">*</string>
+    <string name="divide">/</string>
+</resources>
