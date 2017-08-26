@@ -5,7 +5,10 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.os.Binder;
 import android.os.Build;
+import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
@@ -142,5 +145,22 @@ public class CustomView extends View {
                 return true;
         }
         return super.onTouchEvent(event);
+    }
+
+    @Override
+    protected Parcelable onSaveInstanceState() {
+        Parcelable superState = super.onSaveInstanceState();
+        CustomViewSavedState savedState = new CustomViewSavedState(superState);
+        Bundle bundle = new Bundle();
+        bundle.putBoolean("inBlue",isBlue);
+        savedState.setBundle(bundle);
+        return savedState;
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Parcelable state) {
+        CustomViewSavedState savedState = (CustomViewSavedState) state;
+        super.onRestoreInstanceState(savedState.getSuperState());
+        Bundle bundle = savedState.getBundle();
     }
 }

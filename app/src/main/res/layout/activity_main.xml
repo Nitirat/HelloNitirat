@@ -78,7 +78,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="=0" />
+                    android:text="=0"
+                    android:freezesText="true"/>
             </LinearLayout>
 
             <Button
@@ -88,6 +89,7 @@
                 android:text="@string/calculate" />
 
             <CheckBox
+                android:id="@+id/ChkB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
@@ -171,10 +173,12 @@
                 android:visibility="gone" />
 
             <com.oncelogs.hellonitirat.CustomView
+                android:id="@+id/view1"
                 android:layout_width="match_parent"
                 android:layout_height="160dp" />
 
             <com.oncelogs.hellonitirat.CustomView
+                android:id="@+id/view2"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
                 app:isBlue="true"/>
